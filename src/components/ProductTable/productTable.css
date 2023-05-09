@@ -1,0 +1,21 @@
+.productRow{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.productRow.stocked p{
+    color: red;
+}
+.productRow p{
+    margin: 0 5px;
+}
+
+.CategoryRow{
+    width: 100%;
+    font-weight: bold;
+}
+
+.products_table{
+    width: 100%;
+}
