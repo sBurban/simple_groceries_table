@@ -19,14 +19,26 @@ export type ProductObject = {
     name: string,
 }
 
+import { useState } from 'react';
 import Searchbar from './Searchbar';
 import ProductTable from './ProductTable/ProductTable';
 
 const FilterableProductTable = () => {
 
+    const [filterText, setFilterText] = useState('');
+    const [inStockOnly, setInStockOnly] = useState(false);
+
     return <div style={{ minWidth: "100px" }} >
-        <Searchbar />
-        <ProductTable inventory={groceries} />
+        <Searchbar
+            filterText={filterText}
+            inStockOnly={inStockOnly}
+            onFilterTextChange={setFilterText}
+            onInStockOnlyChange={setInStockOnly}
+        />
+        <ProductTable inventory={groceries}
+            filterText={filterText}
+            inStockOnly={inStockOnly}
+        />
     </div>;
 }
 
